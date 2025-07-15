@@ -611,18 +611,18 @@
     </hop>
     <hop>
       <from>Switch_RESINA</from>
-      <to>Dummy (do nothing)</to>
-      <enabled>Y</enabled>
+      <to>IGNORAR_RESNA</to>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Switch_RESINA</from>
       <to>RESINA</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Switch_RESINA</from>
       <to>UPDATE_RESINA</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>COD_FABRICA</from>
@@ -637,17 +637,17 @@
     <hop>
       <from>Switch_FABRICAMTE</from>
       <to>FABRICANTE</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Switch_FABRICAMTE</from>
-      <to>Dummy (do nothing) 2</to>
-      <enabled>Y</enabled>
+      <to>IGNORAR_FABRICANTE</to>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Switch_FABRICAMTE</from>
       <to>UPDATE_FABRICANTE</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>COD_ACABAMENTO</from>
@@ -682,17 +682,17 @@
     <hop>
       <from>Switch_ACABAMENTO</from>
       <to>ACABAMENTOS</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Switch_ACABAMENTO</from>
       <to>UPDATE_ACABAMENTO</to>
-      <enabled>Y</enabled>
+      <enabled>N</enabled>
     </hop>
     <hop>
       <from>Switch_ACABAMENTO</from>
-      <to>Dummy (do nothing) 2 2</to>
-      <enabled>Y</enabled>
+      <to>IGNORAR_ACABAMENTO</to>
+      <enabled>N</enabled>
     </hop>
   </order>
   <step>
@@ -1104,7 +1104,7 @@
     </GUI>
   </step>
   <step>
-    <name>Dummy (do nothing)</name>
+    <name>IGNORAR_RESNA</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -1129,7 +1129,7 @@
     </GUI>
   </step>
   <step>
-    <name>Dummy (do nothing) 2</name>
+    <name>IGNORAR_FABRICANTE</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -1154,7 +1154,7 @@
     </GUI>
   </step>
   <step>
-    <name>Dummy (do nothing) 2 2</name>
+    <name>IGNORAR_ACABAMENTO</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -1778,7 +1778,7 @@
     <cases>
       <case>
         <value>identical</value>
-        <target_step>Dummy (do nothing) 2 2</target_step>
+        <target_step>IGNORAR_ACABAMENTO</target_step>
       </case>
       <case>
         <value>new</value>
@@ -1824,7 +1824,7 @@
     <cases>
       <case>
         <value>identical</value>
-        <target_step>Dummy (do nothing) 2</target_step>
+        <target_step>IGNORAR_FABRICANTE</target_step>
       </case>
       <case>
         <value>new</value>
@@ -1866,11 +1866,11 @@
     <case_value_format/>
     <case_value_decimal/>
     <case_value_group/>
-    <default_target_step>Dummy (do nothing)</default_target_step>
+    <default_target_step>IGNORAR_RESNA</default_target_step>
     <cases>
       <case>
         <value>identical</value>
-        <target_step>Dummy (do nothing)</target_step>
+        <target_step>IGNORAR_RESNA</target_step>
       </case>
       <case>
         <value>new</value>

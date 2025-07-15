@@ -1255,7 +1255,7 @@ FROM origem.tinta
       </output>
     </remotesteps>
     <GUI>
-      <xloc>144</xloc>
+      <xloc>128</xloc>
       <yloc>176</yloc>
       <draw>Y</draw>
     </GUI>
@@ -1350,7 +1350,6 @@ FROM origem.tinta
       </field>
       <field>
         <name>COR</name>
-        <rename/>
       </field>
       <field>
         <name>cod_acabamento</name>
@@ -1362,7 +1361,6 @@ FROM origem.tinta
       </field>
       <field>
         <name>TARA_CAIXA</name>
-        <rename/>
       </field>
       <field>
         <name>DATA</name>
