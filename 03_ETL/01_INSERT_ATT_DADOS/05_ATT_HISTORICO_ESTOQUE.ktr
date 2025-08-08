@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>02_TINTA</name>
+    <name>05_ATT_HISTORICO_ESTOQUE</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -428,9 +428,9 @@
     <clusterschemas>
     </clusterschemas>
     <created_user>-</created_user>
-    <created_date>2025/05/04 16:18:54.921</created_date>
+    <created_date>2025/05/05 14:21:29.782</created_date>
     <modified_user>-</modified_user>
-    <modified_date>2025/05/04 16:18:54.921</modified_date>
+    <modified_date>2025/05/05 14:21:29.782</modified_date>
     <key_for_session_key>H4sIAAAAAAAA/wMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
@@ -489,37 +489,42 @@
   </connection>
   <order>
     <hop>
-      <from>DADOS_EMPRESA</from>
-      <to>FILTRO</to>
+      <from>TAB_HISTORICO_ESTOQUE</from>
+      <to>Merge rows (diff)</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>FILTRO</from>
-      <to>Join rows (cartesian product)</to>
+      <from>Merge rows (diff)</from>
+      <to>Switch_HISTORICO</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>TB_RESINA</from>
-      <to>Join rows (cartesian product)</to>
+      <from>Switch_HISTORICO</from>
+      <to>TB_HISTORICO</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>TB_ACABAMENTO</from>
-      <to>Join rows (cartesian product)</to>
+      <from>Switch_HISTORICO</from>
+      <to>UPDATE_HISTORICO</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>TB_FABRICANTE</from>
-      <to>Join rows (cartesian product)</to>
+      <from>Switch_HISTORICO</from>
+      <to>Dummy (do nothing)</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
       <from>FILTRO_TB</from>
-      <to>TB_TINTA</to>
+      <to>Merge rows (diff)</to>
       <enabled>Y</enabled>
     </hop>
     <hop>
-      <from>Join rows (cartesian product)</from>
+      <from>DADOS_EMPRESA</from>
+      <to>Null if</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Null if</from>
       <to>FILTRO_TB</to>
       <enabled>Y</enabled>
     </hop>
@@ -559,6 +564,30 @@
     </file>
     <fields>
       <field>
+        <name>COD_HISTORICO</name>
+        <type>Integer</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>COD_SERVICO</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format>#</format>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
         <name>COD_PLANILHA</name>
         <type>String</type>
         <length>-1</length>
@@ -571,7 +600,7 @@
         <group/>
       </field>
       <field>
-        <name>FABRICA</name>
+        <name>TIPO PRODUTO</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -583,7 +612,19 @@
         <group/>
       </field>
       <field>
-        <name>COD_FORNECEDOR</name>
+        <name>DATA SERVICO</name>
+        <type>Timestamp</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>OPERAÇÃO</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -595,7 +636,7 @@
         <group/>
       </field>
       <field>
-        <name>COR</name>
+        <name>PEDIDO</name>
         <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
@@ -607,92 +648,32 @@
         <group/>
       </field>
       <field>
-        <name>ACABAMENTO</name>
-        <type>String</type>
+        <name>VALOR OPERAÇÃO</name>
+        <type>Number</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
-        <format/>
+        <format>#,##0.00</format>
         <currency/>
         <decimal/>
         <group/>
       </field>
       <field>
-        <name>RESINA</name>
-        <type>String</type>
+        <name>SALDO FINAL</name>
+        <type>Number</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
         <repeat>N</repeat>
-        <format/>
+        <format>#,##0.00</format>
         <currency/>
         <decimal/>
         <group/>
       </field>
       <field>
-        <name>ESTOQUE_INICIAL</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>#,##0.00</format>
-        <currency/>
-        <decimal>,</decimal>
-        <group>.</group>
-      </field>
-      <field>
-        <name>SALDO</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>#,##0.00</format>
-        <currency/>
-        <decimal>,</decimal>
-        <group>.</group>
-      </field>
-      <field>
-        <name>TARA_CAIXA</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>#,##0.00</format>
-        <currency/>
-        <decimal>,</decimal>
-        <group>.</group>
-      </field>
-      <field>
-        <name>VALOR_UNITARIO</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>#,##0.00</format>
-        <currency/>
-        <decimal>,</decimal>
-        <group>.</group>
-      </field>
-      <field>
-        <name>VALOR_ESTOQUE</name>
-        <type>Number</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-        <repeat>N</repeat>
-        <format>#,##0.00</format>
-        <currency/>
-        <decimal>,</decimal>
-        <group>.</group>
-      </field>
-      <field>
-        <name>DATA</name>
-        <type>Date</type>
+        <name>OBS</name>
+        <type>String</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -705,7 +686,7 @@
     </fields>
     <sheets>
       <sheet>
-        <name>TINTAS</name>
+        <name>ESTOQUE</name>
         <startrow>2</startrow>
         <startcol>0</startcol>
       </sheet>
@@ -738,61 +719,22 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>144</xloc>
-      <yloc>176</yloc>
+      <xloc>96</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>FILTRO</name>
-    <type>SelectValues</type>
+    <name>Dummy (do nothing)</name>
+    <type>Dummy</type>
     <description/>
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <custom_distribution/>
     <copies>1</copies>
     <partitioning>
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <fields>
-      <field>
-        <name>COD_PLANILHA</name>
-      </field>
-      <field>
-        <name>FABRICA</name>
-      </field>
-      <field>
-        <name>COD_FORNECEDOR</name>
-      </field>
-      <field>
-        <name>COR</name>
-      </field>
-      <field>
-        <name>ACABAMENTO</name>
-      </field>
-      <field>
-        <name>RESINA</name>
-      </field>
-      <field>
-        <name>ESTOQUE_INICIAL</name>
-      </field>
-      <field>
-        <name>SALDO</name>
-      </field>
-      <field>
-        <name>TARA_CAIXA</name>
-      </field>
-      <field>
-        <name>VALOR_UNITARIO</name>
-      </field>
-      <field>
-        <name>VALOR_ESTOQUE</name>
-      </field>
-      <field>
-        <name>DATA</name>
-      </field>
-      <select_unspecified>N</select_unspecified>
-    </fields>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -802,8 +744,8 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>288</xloc>
-      <yloc>176</yloc>
+      <xloc>704</xloc>
+      <yloc>240</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
@@ -820,36 +762,59 @@
     </partitioning>
     <fields>
       <field>
+        <name>COD_HISTORICO</name>
+        <rename/>
+      </field>
+      <field>
+        <name>COD_SERVICO</name>
+        <rename/>
+      </field>
+      <field>
         <name>COD_PLANILHA</name>
         <rename>COD_TINTA</rename>
       </field>
       <field>
-        <name>cod_fabricante</name>
-        <rename>COD_FABRICANTE</rename>
+        <name>OPERAÇÃO</name>
+        <rename>OPERACAO</rename>
       </field>
       <field>
-        <name>COD_FORNECEDOR</name>
-        <rename>COD_TINTA_FABRICANTE</rename>
+        <name>PEDIDO</name>
+        <rename/>
       </field>
       <field>
-        <name>COR</name>
+        <name>VALOR OPERAÇÃO</name>
+        <rename>VALOR_OPERACAO</rename>
       </field>
       <field>
-        <name>cod_acabamento</name>
-        <rename>COD_ACABAMENTO</rename>
+        <name>SALDO FINAL</name>
+        <rename>ESTOQUE_ATUALIZADO</rename>
       </field>
       <field>
-        <name>cod_resina</name>
-        <rename>COD_RESINA</rename>
+        <name>OBS</name>
+        <rename/>
       </field>
       <field>
-        <name>TARA_CAIXA</name>
-      </field>
-      <field>
-        <name>DATA</name>
-        <rename>DATA_CADASTRO</rename>
+        <name>DATA SERVICO</name>
+        <rename>DATA_MOVIMENTACAO</rename>
       </field>
       <select_unspecified>N</select_unspecified>
+      <meta>
+        <name>COD_SERVICO</name>
+        <rename>COD_SERVICO</rename>
+        <type>Integer</type>
+        <length>-2</length>
+        <precision>-2</precision>
+        <conversion_mask/>
+        <date_format_lenient>false</date_format_lenient>
+        <date_format_locale/>
+        <date_format_timezone/>
+        <lenient_string_to_number>false</lenient_string_to_number>
+        <encoding/>
+        <decimal_symbol/>
+        <grouping_symbol/>
+        <currency_symbol/>
+        <storage_type/>
+      </meta>
     </fields>
     <attributes/>
     <cluster_schema/>
@@ -860,14 +825,14 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>624</xloc>
-      <yloc>176</yloc>
+      <xloc>336</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>Join rows (cartesian product)</name>
-    <type>JoinRows</type>
+    <name>Merge rows (diff)</name>
+    <type>MergeRows</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -876,36 +841,23 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <directory>%%java.io.tmpdir%%</directory>
-    <prefix>out</prefix>
-    <cache_size>500</cache_size>
-    <main/>
+    <keys>
+      <key>cod_historico</key>
+    </keys>
+    <values>
+      <value>cod_historico</value>
+      <value>cod_tinta</value>
+      <value>operacao</value>
+      <value>pedido</value>
+      <value>valor_operacao</value>
+      <value>estoque_atualizado</value>
+      <value>obs</value>
+      <value>data_movimentacao</value>
+    </values>
+    <flag_field>flagfield</flag_field>
+    <reference>TAB_HISTORICO_ESTOQUE</reference>
+    <compare>FILTRO_TB</compare>
     <compare>
-      <condition>
-        <negated>N</negated>
-        <conditions>
-          <condition>
-            <negated>N</negated>
-            <leftvalue>RESINA</leftvalue>
-            <function>=</function>
-            <rightvalue>nome_resina</rightvalue>
-          </condition>
-          <condition>
-            <negated>N</negated>
-            <operator>AND</operator>
-            <leftvalue>ACABAMENTO</leftvalue>
-            <function>=</function>
-            <rightvalue>nome_acabamento</rightvalue>
-          </condition>
-          <condition>
-            <negated>N</negated>
-            <operator>AND</operator>
-            <leftvalue>FABRICA</leftvalue>
-            <function>=</function>
-            <rightvalue>nome_fabricante</rightvalue>
-          </condition>
-        </conditions>
-      </condition>
     </compare>
     <attributes/>
     <cluster_schema/>
@@ -917,12 +869,58 @@
     </remotesteps>
     <GUI>
       <xloc>448</xloc>
-      <yloc>176</yloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>TB_ACABAMENTO</name>
+    <name>Switch_HISTORICO</name>
+    <type>SwitchCase</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fieldname>flagfield</fieldname>
+    <use_contains>N</use_contains>
+    <case_value_type>String</case_value_type>
+    <case_value_format/>
+    <case_value_decimal/>
+    <case_value_group/>
+    <default_target_step>Dummy (do nothing)</default_target_step>
+    <cases>
+      <case>
+        <value>identical</value>
+        <target_step>Dummy (do nothing)</target_step>
+      </case>
+      <case>
+        <value>new</value>
+        <target_step>TB_HISTORICO</target_step>
+      </case>
+      <case>
+        <value>changed</value>
+        <target_step>UPDATE_HISTORICO</target_step>
+      </case>
+    </cases>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>560</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>TAB_HISTORICO_ESTOQUE</name>
     <type>TableInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -934,9 +932,16 @@
     </partitioning>
     <connection>DB_PROJETO_GIT</connection>
     <sql>SELECT
-  cod_acabamento
-, nome_acabamento
-FROM origem.acabamento
+  cod_historico
+, cod_servico
+, cod_tinta
+, operacao
+, pedido
+, valor_operacao
+, estoque_atualizado
+, obs
+, data_movimentacao
+FROM origem.historico_estoque
 </sql>
     <limit>0</limit>
     <lookup/>
@@ -948,11 +953,34 @@ FROM origem.acabamento
       <value-meta>
         <type>Integer</type>
         <storagetype>normal</storagetype>
-        <name>cod_acabamento</name>
+        <name>cod_historico</name>
         <length>9</length>
         <precision>0</precision>
-        <origin>TB_ACABAMENTO</origin>
-        <comments>cod_acabamento</comments>
+        <origin>TAB_HISTORICO_ESTOQUE</origin>
+        <comments>cod_historico</comments>
+        <conversion_Mask>####0;-####0</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Integer</type>
+        <storagetype>normal</storagetype>
+        <name>cod_servico</name>
+        <length>9</length>
+        <precision>0</precision>
+        <origin>TAB_HISTORICO_ESTOQUE</origin>
+        <comments>cod_servico</comments>
         <conversion_Mask>####0;-####0</conversion_Mask>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
@@ -971,11 +999,149 @@ FROM origem.acabamento
       <value-meta>
         <type>String</type>
         <storagetype>normal</storagetype>
-        <name>nome_acabamento</name>
-        <length>50</length>
+        <name>cod_tinta</name>
+        <length>2147483647</length>
         <precision>-1</precision>
-        <origin>TB_ACABAMENTO</origin>
-        <comments>nome_acabamento</comments>
+        <origin>TAB_HISTORICO_ESTOQUE</origin>
+        <comments>cod_tinta</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>operacao</name>
+        <length>7</length>
+        <precision>-1</precision>
+        <origin>TAB_HISTORICO_ESTOQUE</origin>
+        <comments>operacao</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>pedido</name>
+        <length>30</length>
+        <precision>-1</precision>
+        <origin>TAB_HISTORICO_ESTOQUE</origin>
+        <comments>pedido</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Number</type>
+        <storagetype>normal</storagetype>
+        <name>valor_operacao</name>
+        <length>5</length>
+        <precision>2</precision>
+        <origin>TAB_HISTORICO_ESTOQUE</origin>
+        <comments>valor_operacao</comments>
+        <conversion_Mask>####0.0#########;-####0.0#########</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Number</type>
+        <storagetype>normal</storagetype>
+        <name>estoque_atualizado</name>
+        <length>5</length>
+        <precision>2</precision>
+        <origin>TAB_HISTORICO_ESTOQUE</origin>
+        <comments>estoque_atualizado</comments>
+        <conversion_Mask>####0.0#########;-####0.0#########</conversion_Mask>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>String</type>
+        <storagetype>normal</storagetype>
+        <name>obs</name>
+        <length>200</length>
+        <precision>-1</precision>
+        <origin>TAB_HISTORICO_ESTOQUE</origin>
+        <comments>obs</comments>
+        <conversion_Mask/>
+        <decimal_symbol>.</decimal_symbol>
+        <grouping_symbol>,</grouping_symbol>
+        <currency_symbol/>
+        <trim_type>none</trim_type>
+        <case_insensitive>N</case_insensitive>
+        <collator_disabled>Y</collator_disabled>
+        <collator_strength>0</collator_strength>
+        <sort_descending>N</sort_descending>
+        <output_padding>N</output_padding>
+        <date_format_lenient>N</date_format_lenient>
+        <date_format_locale>pt_BR</date_format_locale>
+        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
+        <lenient_string_to_number>N</lenient_string_to_number>
+      </value-meta>
+      <value-meta>
+        <type>Timestamp</type>
+        <storagetype>normal</storagetype>
+        <name>data_movimentacao</name>
+        <length>6</length>
+        <precision>-1</precision>
+        <origin>TAB_HISTORICO_ESTOQUE</origin>
+        <comments>data_movimentacao</comments>
         <conversion_Mask/>
         <decimal_symbol>.</decimal_symbol>
         <grouping_symbol>,</grouping_symbol>
@@ -1001,183 +1167,13 @@ FROM origem.acabamento
       </output>
     </remotesteps>
     <GUI>
-      <xloc>448</xloc>
-      <yloc>304</yloc>
+      <xloc>336</xloc>
+      <yloc>48</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step>
-    <name>TB_FABRICANTE</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>DB_PROJETO_GIT</connection>
-    <sql>SELECT
-  cod_fabricante
-, nome_fabricante
-FROM origem.fabricante
-</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cached_row_meta_active>N</cached_row_meta_active>
-    <row-meta>
-      <value-meta>
-        <type>Integer</type>
-        <storagetype>normal</storagetype>
-        <name>cod_fabricante</name>
-        <length>9</length>
-        <precision>0</precision>
-        <origin>TB_FABRICANTE</origin>
-        <comments>cod_fabricante</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_BR</date_format_locale>
-        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>nome_fabricante</name>
-        <length>100</length>
-        <precision>-1</precision>
-        <origin>TB_FABRICANTE</origin>
-        <comments>nome_fabricante</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_BR</date_format_locale>
-        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-    </row-meta>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>576</xloc>
-      <yloc>304</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>TB_RESINA</name>
-    <type>TableInput</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <connection>DB_PROJETO_GIT</connection>
-    <sql>SELECT
-  cod_resina
-, nome_resina
-FROM origem.resina
-</sql>
-    <limit>0</limit>
-    <lookup/>
-    <execute_each_row>N</execute_each_row>
-    <variables_active>N</variables_active>
-    <lazy_conversion_active>N</lazy_conversion_active>
-    <cached_row_meta_active>N</cached_row_meta_active>
-    <row-meta>
-      <value-meta>
-        <type>Integer</type>
-        <storagetype>normal</storagetype>
-        <name>cod_resina</name>
-        <length>9</length>
-        <precision>0</precision>
-        <origin>TB_RESINA</origin>
-        <comments>cod_resina</comments>
-        <conversion_Mask>####0;-####0</conversion_Mask>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_BR</date_format_locale>
-        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-      <value-meta>
-        <type>String</type>
-        <storagetype>normal</storagetype>
-        <name>nome_resina</name>
-        <length>100</length>
-        <precision>-1</precision>
-        <origin>TB_RESINA</origin>
-        <comments>nome_resina</comments>
-        <conversion_Mask/>
-        <decimal_symbol>.</decimal_symbol>
-        <grouping_symbol>,</grouping_symbol>
-        <currency_symbol/>
-        <trim_type>none</trim_type>
-        <case_insensitive>N</case_insensitive>
-        <collator_disabled>Y</collator_disabled>
-        <collator_strength>0</collator_strength>
-        <sort_descending>N</sort_descending>
-        <output_padding>N</output_padding>
-        <date_format_lenient>N</date_format_lenient>
-        <date_format_locale>pt_BR</date_format_locale>
-        <date_format_timezone>America/Sao_Paulo</date_format_timezone>
-        <lenient_string_to_number>N</lenient_string_to_number>
-      </value-meta>
-    </row-meta>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>320</xloc>
-      <yloc>304</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>TB_TINTA</name>
+    <name>TB_HISTORICO</name>
     <type>TableOutput</type>
     <description/>
     <distribute>Y</distribute>
@@ -1189,12 +1185,12 @@ FROM origem.resina
     </partitioning>
     <connection>DB_PROJETO_GIT</connection>
     <schema>origem</schema>
-    <table>tinta</table>
+    <table>historico_estoque</table>
     <commit>1000</commit>
     <truncate>N</truncate>
     <ignore_errors>N</ignore_errors>
     <use_batch>Y</use_batch>
-    <specify_fields>N</specify_fields>
+    <specify_fields>Y</specify_fields>
     <partitioning_enabled>N</partitioning_enabled>
     <partitioning_field/>
     <partitioning_daily>N</partitioning_daily>
@@ -1206,36 +1202,40 @@ FROM origem.resina
     <return_field/>
     <fields>
       <field>
+        <column_name>cod_historico</column_name>
+        <stream_name>cod_historico</stream_name>
+      </field>
+      <field>
+        <column_name>cod_servico</column_name>
+        <stream_name>cod_servico</stream_name>
+      </field>
+      <field>
         <column_name>cod_tinta</column_name>
-        <stream_name>COD_PLANILHA</stream_name>
+        <stream_name>cod_tinta</stream_name>
       </field>
       <field>
-        <column_name>cod_fabricante</column_name>
-        <stream_name>COD_FABRICANTE</stream_name>
+        <column_name>operacao</column_name>
+        <stream_name>operacao</stream_name>
       </field>
       <field>
-        <column_name>cod_tinta_fabricante</column_name>
-        <stream_name>COD_TINTA_FABRICANTE</stream_name>
+        <column_name>pedido</column_name>
+        <stream_name>pedido</stream_name>
       </field>
       <field>
-        <column_name>cor</column_name>
-        <stream_name>COR</stream_name>
+        <column_name>valor_operacao</column_name>
+        <stream_name>valor_operacao</stream_name>
       </field>
       <field>
-        <column_name>cod_acabamento</column_name>
-        <stream_name>COD_ACABAMENTO</stream_name>
+        <column_name>estoque_atualizado</column_name>
+        <stream_name>estoque_atualizado</stream_name>
       </field>
       <field>
-        <column_name>cod_resina</column_name>
-        <stream_name>COD_RESINA</stream_name>
+        <column_name>obs</column_name>
+        <stream_name>obs</stream_name>
       </field>
       <field>
-        <column_name>tara_caixa</column_name>
-        <stream_name>TARA_CAIXA</stream_name>
-      </field>
-      <field>
-        <column_name>data_cadastro</column_name>
-        <stream_name>DATA_CADASTRO</stream_name>
+        <column_name>data_movimentacao</column_name>
+        <stream_name>data_movimentacao</stream_name>
       </field>
     </fields>
     <attributes/>
@@ -1247,8 +1247,116 @@ FROM origem.resina
       </output>
     </remotesteps>
     <GUI>
-      <xloc>752</xloc>
-      <yloc>176</yloc>
+      <xloc>704</xloc>
+      <yloc>80</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>UPDATE_HISTORICO</name>
+    <type>Update</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>DB_PROJETO_GIT</connection>
+    <skip_lookup>N</skip_lookup>
+    <commit>100</commit>
+    <use_batch>N</use_batch>
+    <error_ignored>N</error_ignored>
+    <ignore_flag_field/>
+    <lookup>
+      <schema>origem</schema>
+      <table>historico_estoque</table>
+      <key>
+        <name>cod_historico</name>
+        <field>cod_historico</field>
+        <condition>=</condition>
+        <name2/>
+      </key>
+      <value>
+        <name>cod_historico</name>
+        <rename>cod_historico</rename>
+      </value>
+      <value>
+        <name>cod_servico</name>
+        <rename>cod_servico</rename>
+      </value>
+      <value>
+        <name>cod_tinta</name>
+        <rename>cod_tinta</rename>
+      </value>
+      <value>
+        <name>operacao</name>
+        <rename>operacao</rename>
+      </value>
+      <value>
+        <name>pedido</name>
+        <rename>pedido</rename>
+      </value>
+      <value>
+        <name>valor_operacao</name>
+        <rename>valor_operacao</rename>
+      </value>
+      <value>
+        <name>estoque_atualizado</name>
+        <rename>estoque_atualizado</rename>
+      </value>
+      <value>
+        <name>obs</name>
+        <rename>obs</rename>
+      </value>
+      <value>
+        <name>data_movimentacao</name>
+        <rename>data_movimentacao</rename>
+      </value>
+    </lookup>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>704</xloc>
+      <yloc>160</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Null if</name>
+    <type>NullIf</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>COD_SERVICO</name>
+        <value>#</value>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>208</xloc>
+      <yloc>160</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
