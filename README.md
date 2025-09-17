@@ -9,11 +9,11 @@
 ![Excel Antigo](https://github.com/VictorEMF/ERP-altapint-prototipo/blob/main/02%20-%20ARQUIVOS/IMAGEN/EXCEL%20ANTIGO.png)
 
 <p>
-  O metodo utilizado para extrair os dados foi o python, porem mesmo pos a extração os dados precisavam ser tratatos ja que do jeito que eles ficaram nem mesmo ferramentas de ETL como o propio Pentaho Data Integration(PDI) poderia compreender, entao utilizando o python novmanete foi feito um secundo tratamento para deixar os dados mais faceis de comprender e em segunda foi tulizado o Pentaho pegar esses dados e transformar em finalmente no objetivo final. 
+  O metodo utilizado para extrair os dados foi o python, porem mesmo pos a extração os dados precisavam ser tratatos ja que do jeito que eles ficaram nem mesmo ferramentas de ETL como o Pentaho Data Integration(PDI) poderia compreender, entao utilizando o python novmanete foi feito um secundo tratamento para deixar os dados mais faceis de serem compreendidos e em seguida foi utulizado o Pentaho pegar esses dados e subir em banco de dados temporarios e extrair os dados. 
 </p>
 
-IMG AQUI
 
 <p>
-  Depois dessa extração os arquivos ficavam em um pasta e para transforma isso para apenas 2 arquivos foi utilizado o pentaho data integration(PDI) para agrupar todos os dados 
+  Depois dessas etapas feitas aepenas sobrou 2 arquivos, tintas.xlsx e historico.xlsx, com esses arquivos foi utilizado o Pentaho para mesclrar em apenas um arquivo com 3 sheets. Apos todas essas etapas a parte mais dificil do projeto esta finalizado e daria inicio a proxima que seria a crição da automação que foi o pedido inicial.
+  A automação veio para facilitar o cadastro das atividades na empresa, pois todo trabalho de cadastro de tinta e mocimentação era feito manualmente no excel pelo chefe e pela sua assistencia.
 </p>
