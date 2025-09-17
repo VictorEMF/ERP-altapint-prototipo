@@ -15,5 +15,6 @@
 
 <p>
   Depois dessas etapas feitas aepenas sobrou 2 arquivos, tintas.xlsx e historico.xlsx, com esses arquivos foi utilizado o Pentaho para mesclrar em apenas um arquivo com 3 sheets. Apos todas essas etapas a parte mais dificil do projeto esta finalizado e daria inicio a proxima que seria a crição da automação que foi o pedido inicial.
-  A automação veio para facilitar o cadastro das atividades na empresa, pois todo trabalho de cadastro de tinta e mocimentação era feito manualmente no excel pelo chefe e pela sua assistencia.
+  A automação veio para facilitar o cadastro das atividades na empresa, pois todo trabalho de cadastro de tinta, movimentação, calculo de gasto, atualização de estoque era feito manualmente no excel pelo chefe e pela sua assistencia.
+  Com isso foi criado um sistema de cadastro de tinta e um sistema para cadastrar seviços realizados junto com isso todos os calculos e edições seria feitos pelo propio VBA.
 </p>
