@@ -9,7 +9,7 @@
 ![Excel Antigo](https://github.com/VictorEMF/ERP-altapint-prototipo/blob/main/02%20-%20ARQUIVOS/IMAGEN/EXCEL%20ANTIGO.png)
 
 <p>
-  O metodo utilizado para tratar os dados foi utilizando python para fazer toda extração de dados, onde extraia partes do sheets ja que o arquivo nao tinha uma formatcao facil para extrair.
+  O metodo utilizaod para extrair os dados foi utilizando o python, porem mesmo pos a extração os dados precisavam ser tratatos ja que do jeito que eles ficavam nem mesmo ferramentas de ETL como o propio Pentaho Data Integration(PDI) poderia compreender, entao foi usando o python novmanete para esse tratamento para depois pode ser utilizado um o ETL 
 </p>
 
 IMG AQUI
