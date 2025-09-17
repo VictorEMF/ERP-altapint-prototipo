@@ -22,3 +22,5 @@
 <p>
   Com isso foi criado um sistema de cadastro de tinta e um sistema para cadastrar seviços realizados junto com isso todos os calculos e edições seria feitos pelo propio VBA.
 </p>
+
+![EXCEL_NOVO](https://github.com/VictorEMF/ERP-altapint-prototipo/blob/main/02%20-%20ARQUIVOS/IMAGEN/EXCEL%20NOVO.png)
