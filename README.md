@@ -26,4 +26,10 @@
   Com isso foi criado um sistema de cadastro de tinta e um sistema para cadastrar seviços realizados junto com isso todos os calculos e edições seria feitos pelo propio VBA.
 </p>
 
+<strong>
+  imagem do sistema de cadastro
+</strong>
 
+<p>
+  O ultimo objetivo do projrto visava a vixualicao dos dados da empresa, o clinte nao queria mais depender do excel para poder vizualizar os dados, para ele o excel seria apenas o meio de cadastro das informações, com essa informação foi criado um dashboard apenas com os dados desejados. Já que foi pedido que o excel apenas fosse o sistema de cadastro houve a criação de piqueno banco de dados local utilizando o postgres, com isso houve tambel a criação de um ETL no Pentaho para pegar os dados do excel e alimentar o banco de dados uma vez por mes,com isso o cliente pode todo inicio de mes se peparar com as informações
+</p>
