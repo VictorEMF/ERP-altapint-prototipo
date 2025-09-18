@@ -1,37 +1,92 @@
-# ERP-altapint-prototipo
+## ERP AltaPint - Sistema de Gestão
+
+![status](https://img.shields.io/badge/status-conclu%C3%ADdo-brightgreen)
+![python](https://img.shields.io/badge/tech-python-blue)
+![postgres](https://img.shields.io/badge/database-postgresql-blue)
+![power_bi](https://img.shields.io/badge/visualization-power_bi-orange)
+
+## 📋 Sobre o Projeto
+
+Este projeto surgiu da necessidade de modernizar o sistema de controle de estoque da empresa AltaPint, que anteriormente utilizava uma planilha Excel extremamente complexa com 127 abas para gerenciar tintas e seu histórico. Cada tinta tinha sua própria aba com todo o histórico, tornando a visualização e gestão dos dados bastante complicada.
+
+A ideia de remodelação foi criar um novo Excel com apenas 3 abas principais (menu principal, tintas e histórico), simplificando significativamente a visualização e o gerenciamento das informações.
+
+## 🎯 Objetivos
+
+- Simplificar a visualização e gestão de dados de estoque
+
+- Automatizar processos manuais de cadastro e cálculos
+
+- Criar dashboard intuitivo para análise de dados
+
+- Reduzir erros operacionais e tempo de processamento
+
+## ⚙️ Funcionalidades
+
+- ✅ Sistema de cadastro de tintas
+
+- ✅ Registro automatizado de serviços
+
+- ✅ Cálculos automáticos de gastos e estoque
+
+- ✅ Dashboard interativo para análise de dados
+
+- ✅ Integração mensal com banco de dados PostgreSQL
+
+- ✅ Processo ETL para migração e tratamento de dados
+
+## 🛠️ Tecnologias Utilizadas
 
 
-<h2>Excel antigo</h2>
-<p>
-  A ideia do projeto original da empresa era que apenas 1 arquivo excel fizesse todo o controle manual do estoque, nele tinha 127 sheets para cada tinta e dentro deles tinha todo o histórico da tinta, a ideia de remodelação do arquivo foi criar um novo excel com apenas com 3 sheets onde tem menu principal, tintas e histórico. Desse jeito fica mais fácil a visualização dos dados.
-</p>
+- <strong>Python</strong> - Extração e tratamento de dados
 
-![Excel Antigo](https://github.com/VictorEMF/ERP-altapint-prototipo/blob/main/02%20-%20ARQUIVOS/IMAGEN/EXCEL%20ANTIGO.png)
+- <strong>VBA/Excel</strong>  - Automação e interface de cadastro
 
-<p>
-  O método utilizado para extrair os dados foi o python, porem mesmo pós a extração os dados precisavam ser tratados ja que do jeito que eles ficaram nem mesmo ferramentas de ETL como o Pentaho Data Integration(PDI) poderia compreender, então utilizando o python novamente foi feito um secundo tratamento para deixar os dados mais fáceis de serem compreendidos e em seguida foi utilizado o Pentaho pegar esses dados e subir em banco de dados temporários e extrair os dados. 
-</p>
+- <strong>Pentaho Data Integration</strong>  - Processo ETL
+
+- <strong>PostgreSQL</strong>  - Banco de dados
+  
+- <strong>Power BI</strong>  - Visualização e analytics
+
+## 📊 Metodologia de Desenvolvimento
 
 
-<p>
-  Depois dessas etapas feitas apenas sobrou 2 arquivos, tintas.xlsx e historico.xlsx, com esses arquivos foi utilizado o Pentaho para mesclar em apenas um arquivo com 3 sheets. Apos todas essas etapas a parte mais difícil do projeto esta finalizado e daria inicio a próxima que seria a criação da automação que foi o pedido inicial.
-</p>
+## Extração e Tratamento de Dados
 
-![EXCEL_NOVO](https://github.com/VictorEMF/ERP-altapint-prototipo/blob/main/02%20-%20ARQUIVOS/IMAGEN/EXCEL%20NOVO.png)
+O método utilizado para extrair os dados foi o Python. Porém, mesmo após a extração, os dados precisavam ser tratados, já que do jeito que ficaram inicialmente, nem mesmo ferramentas de ETL como o Pentaho Data Integration (PDI) conseguiam compreendê-los.
 
-<p>
-  A automação veio para facilitar o cadastro das atividades na empresa, pois todo trabalho de cadastro de tinta, movimentação, calculo de gasto, atualização de estoque era feito manualmente no excel pelo chefe e pela sua assistência.
-</p>
-<p>
-  Com isso foi criado um sistema de cadastro de tinta e um sistema para cadastrar serviços realizados junto com isso todos os cálculos e edições seria feitos pelo propio VBA.
-</p>
+Utilizando Python novamente, foi feito um segundo tratamento para deixar os dados mais fáceis de serem processados. Em seguida, utilizamos o Pentaho para carregar esses dados em bancos de dados temporários e realizar a extração final.
 
-<strong>
-  imagem do sistema de cadastro
-</strong>
 
-<p>
-  O ultimo objetivo do projeto visava a visualização dos dados da empresa, o cliente não queria mais depender do excel para poder visualizar os dados, para ele o excel seria apenas o meio de cadastro das informações, com essa informação foi criado um dashboard apenas com os dados desejados. Já que foi pedido que o excel apenas fosse o sistema de cadastro houve a criação de pequeno banco de dados local utilizando o postgres, com isso houve tamebm a criação de um ETL no Pentaho para pegar os dados do excel e alimentar o banco de dados uma vez por mês,com isso o cliente pode todo inicio de mês se preparar com as informações
-</p>
+## Consolidação dos Dados
 
-![DASHBOARD](https://github.com/VictorEMF/ERP-altapint-prototipo/blob/main/04%20-%20POWER_BI/IMAGEM/DASHBOARD_VENDAS.png)
+Após essas etapas, restaram apenas 2 arquivos: tintas.xlsx e historico.xlsx. Com esses arquivos, utilizamos o Pentaho para mesclar tudo em um único arquivo com 3 abas. Com a conclusão dessas etapas, a parte mais difícil do projeto estava finalizada e dávamos início à próxima fase: a criação da automação, que era o pedido inicial.
+
+## Sistema de Automação
+
+A automação foi desenvolvida para facilitar o cadastro das atividades na empresa, pois todo o trabalho de cadastro de tinta, movimentação, cálculo de gasto e atualização de estoque era feito manualmente no Excel pelo chefe e sua assistência.
+
+Para resolver este problema, criamos:
+
+- Um sistema de cadastro de tinta
+
+- Um sistema para cadastrar serviços realizados
+
+- Todos os cálculos e edições são feitos automaticamente pelo próprio VBA
+
+
+## Dashboard e Visualização
+
+O último objetivo do projeto visava a visualização dos dados da empresa. O cliente não queria mais depender do Excel para visualizar os dados - o Excel seria apenas o meio de cadastro das informações.
+
+Para atender esta necessidade, criamos um dashboard com os dados mais relevantes e implementamos um pequeno banco de dados local utilizando PostgreSQL. Desenvolvemos também um processo ETL no Pentaho para capturar os dados do Excel e alimentar o banco de dados uma vez por mês, permitindo que o cliente se prepare com as informações atualizadas todo início de mês.
+
+## 📸 Visualizações
+
+## Excel Antigo vs Novo
+
+![excel_antigo](https://github.com/VictorEMF/ERP-altapint-prototipo/blob/main/02%20-%20ARQUIVOS/IMAGEN/EXCEL%20ANTIGO.png)
+*Planilha original complexa com 127 abas - cada tinta tinha sua própria aba com histórico completo*
+
+![excel_novo](https://github.com/VictorEMF/ERP-altapint-prototipo/blob/main/02%20-%20ARQUIVOS/IMAGEN/EXCEL%20NOVO.png)
+Nova planilha simplificada com apenas 3 abas: menu principal, tintas e histórico
