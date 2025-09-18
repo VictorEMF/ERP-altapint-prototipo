@@ -90,3 +90,72 @@ Para atender esta necessidade, criamos um dashboard com os dados mais relevantes
 
 ![excel_novo](https://github.com/VictorEMF/ERP-altapint-prototipo/blob/main/02%20-%20ARQUIVOS/IMAGEN/EXCEL%20NOVO.png)
 Nova planilha simplificada com apenas 3 abas: menu principal, tintas e histórico
+
+## Sistema de Cadastro
+
+Interface do sistema de cadastro desenvolvido em VBA para automatizar o registro de tintas e serviços
+
+## Dashboard de Análise
+
+![dashboard](https://github.com/VictorEMF/ERP-altapint-prototipo/blob/main/04%20-%20POWER_BI/IMAGEM/DASHBOARD_VENDAS.png)
+Dashboard criado no Power BI para visualização de dados e métricas de vendas
+
+## 🔄 Fluxo do Processo
+
+  1. Extração: Dados migrados do Excel antigo usando Python
+
+  2. Transformação: Tratamento adicional e estruturação dos dados
+
+  3. Carga: Processamento ETL com Pentaho para PostgreSQL
+
+  4. Automação: Sistema VBA para cadastro e gestão contínua
+
+  5. Visualização: Dashboard Power BI para análise mensal
+
+## 🚀 Como Utilizar
+
+  - Python 3.8+
+    
+  - PostgreSQL 12+
+    
+  - Pentaho Data Integration
+    
+  - Microsoft Excel
+    
+  - Power BI Desktop
+
+## Processo de Migração
+
+  - Executar scripts Python para extração dos dados antigos
+    
+  - Realizar tratamento adicional dos dados
+    
+  - Executar jobs do Pentaho para carga no PostgreSQL
+    
+  - Configurar conexão do Power BI com o banco de dados
+    
+  - Implementar automações VBA no Excel novo
+
+## 📈 Resultados Obtidos
+
+  - Redução de 127 para 3 abas no Excel
+
+  - Automação completa dos cálculos de estoque
+
+  - Dashboard mensal para tomada de decisão
+
+  - Processo de atualização mensal automatizado
+
+  - Melhoria significativa na usabilidade do sistema
+
+## 📄 Licença
+
+Este projeto está sob licença. Veja o arquivo LICENSE para detalhes.
+
+## 📞 Contato
+
+Victor Emanuel - GitHub - victor.emanuel@example.com
+
+Link do Projeto: https://github.com/VictorEMF/ERP-altapint-prototipo
+
+<strong>Nota:</strong> Este projeto foi desenvolvido como protótipo para demonstração das capacidades de automação e modernização de sistemas legados, transformando um processo manual e complexo em uma solução integrada e eficiente.
