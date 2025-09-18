@@ -33,3 +33,5 @@
 <p>
   O ultimo objetivo do projrto visava a vixualicao dos dados da empresa, o clinte nao queria mais depender do excel para poder vizualizar os dados, para ele o excel seria apenas o meio de cadastro das informações, com essa informação foi criado um dashboard apenas com os dados desejados. Já que foi pedido que o excel apenas fosse o sistema de cadastro houve a criação de piqueno banco de dados local utilizando o postgres, com isso houve tambel a criação de um ETL no Pentaho para pegar os dados do excel e alimentar o banco de dados uma vez por mes,com isso o cliente pode todo inicio de mes se peparar com as informações
 </p>
+
+![DASHBOARD](https://github.com/VictorEMF/ERP-altapint-prototipo/blob/main/04%20-%20POWER_BI/IMAGEM/DASHBOARD_VENDAS.png)
