@@ -100,6 +100,23 @@ Interface do sistema de cadastro desenvolvido em VBA para automatizar o registro
 ![dashboard](https://github.com/VictorEMF/ERP-altapint-prototipo/blob/main/04%20-%20POWER_BI/IMAGEM/DASHBOARD_VENDAS.png)
 Dashboard criado no Power BI para visualização de dados e métricas de vendas
 
+## 📊 Estrutura do Projeto
+
+```
+ERP-altapint-prototipo/
+├── 01 - SCRIPTS_PYTHON/         # Scripts de extração e tratamento de dados
+├── 02 - ARQUIVOS/               # Arquivos de base e recursos
+│   ├── IMAGEM/                  # Imagens do projeto
+│   │   ├── EXCEL_ANTIGO.png
+│   │   ├── EXCEL_NOVO.png
+├── 03 - ETL_PENTAHO/            # Transformações e jobs do Pentaho
+├── 04 - POWER_BI/               # Dashboards e relatórios
+│   ├── IMAGEM/
+│   │   ├── DASHBOARD_VENDAS.png
+├── 05 - DOCUMENTACAO/           # Manuais e documentação
+├── README.md
+```
+
 ## 🔄 Fluxo do Processo
 
   1. Extração: Dados migrados do Excel antigo usando Python
