@@ -180,7 +180,7 @@ Este projeto está sob licença. Veja o arquivo LICENSE para detalhes.
 
 ## 📞 Contato
 
-Victor Emanuel - GitHub - victor.emanuel@example.com
+Victor Emanuel - GitHub - victoremanuel.mff@outlook.com
 
 Link do Projeto: https://github.com/VictorEMF/ERP-altapint-prototipo
 
