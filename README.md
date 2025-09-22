@@ -110,6 +110,13 @@ ERP-altapint-prototipo/
 │   │   ├── EXCEL_ANTIGO.png
 │   │   ├── EXCEL_NOVO.png
 ├── 03 - ETL/                    # Transformações e jobs do Pentaho
+│   ├── IMAGEM/                  # Imagens das transformações
+│   │   ├── 01_CARGA_DADOS.png
+│   │   ├── 01_RESINA_FABRICANTE_ACABAMENTO.png
+│   │   ├── 02_TINTA.png
+│   │   ├── 03_ESTOQUE.png
+│   │   ├── 04_SERVIÇO.png
+│   │   ├── 05_HISTORICO.png                  
 ├── 04 - POWER_BI/               # Dashboards e relatórios
 │   ├── IMAGEM/
 │   │   ├── DASHBOARD_VENDAS.png
