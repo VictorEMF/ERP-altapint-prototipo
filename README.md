@@ -1,9 +1,10 @@
 ## ERP AltaPint - Sistema de Gestão
 
 ![status](https://img.shields.io/badge/status-conclu%C3%ADdo-brightgreen)
-![python](https://img.shields.io/badge/tech-python-blue)
-![postgres](https://img.shields.io/badge/database-postgresql-blue)
-![power_bi](https://img.shields.io/badge/visualization-power_bi-orange)
+<a href="https://www.python.org/"><img src="https://img.shields.io/badge/tech-python-blue" alt="Python"/></a>
+<a href="https://www.postgresql.org/"><img src="https://img.shields.io/badge/database-postgresql-blue" alt="Postgres"/></a>
+<a href="https://www.microsoft.com/pt-br/power-platform/products/power-bi"><img src="https://img.shields.io/badge/visualization-power_bi-orange" alt="Power BI"/></a>
+
 
 ## 📋 Sobre o Projeto
 
