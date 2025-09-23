@@ -1,4 +1,4 @@
-## Sistema ERP Customizado - Controle de Estoque, Produção e Financeiro
+## Sistema ERP Tintas - Controle de Estoque, Produção e Financeiro
 
 ![status](https://img.shields.io/badge/status-conclu%C3%ADdo-brightgreen)
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/tech-python-blue" alt="Python"/></a>
