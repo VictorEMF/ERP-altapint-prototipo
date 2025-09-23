@@ -105,7 +105,7 @@ Dashboard criado no Power BI para visualização de dados e métricas de vendas
 ## 📊 Estrutura do Projeto
 
 ```
-ERP-altapint-prototipo/
+Sistema ERP Customizado - Controle de Estoque, Produção e Financeiro/
 ├── 01 - DOCUMENTACAO/           # Manuais e documentação
 ├── 02 - ARQUIVOS/               # Arquivos de base e recursos
 │   ├── IMAGEM/                  # Imagens do projeto
