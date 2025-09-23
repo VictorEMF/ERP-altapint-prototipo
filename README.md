@@ -9,7 +9,7 @@
 
 ## 📋 Sobre o Projeto
 
-Este projeto surgiu da necessidade de modernizar o sistema de controle de estoque da empresa AltaPint, que anteriormente utilizava uma planilha Excel extremamente complexa com 127 abas para gerenciar tintas e seu histórico. Cada tinta tinha sua própria aba com todo o histórico, tornando a visualização e gestão dos dados bastante complicada.
+Este projeto surgiu da necessidade de modernizar o sistema de controle de estoque de uma empresa do setor de pintura, que anteriormente utilizava uma planilha Excel extremamente complexa com 127 abas para gerenciar tintas e seu histórico. Cada tinta tinha sua própria aba com todo o histórico, tornando a visualização e gestão dos dados bastante complicada.
 
 A ideia de remodelação foi criar um novo Excel com apenas 3 abas principais (menu principal, tintas e histórico), simplificando significativamente a visualização e o gerenciamento das informações.
 
