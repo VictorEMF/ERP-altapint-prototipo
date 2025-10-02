@@ -1,4 +1,4 @@
-## ERP AltaPint - Sistema de Gestão
+## Sistema ERP Tintas - Controle de Estoque, Produção e Financeiro
 
 ![status](https://img.shields.io/badge/status-conclu%C3%ADdo-brightgreen)
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/tech-python-blue" alt="Python"/></a>
@@ -9,7 +9,7 @@
 
 ## 📋 Sobre o Projeto
 
-Este projeto surgiu da necessidade de modernizar o sistema de controle de estoque da empresa AltaPint, que anteriormente utilizava uma planilha Excel extremamente complexa com 127 abas para gerenciar tintas e seu histórico. Cada tinta tinha sua própria aba com todo o histórico, tornando a visualização e gestão dos dados bastante complicada.
+Este projeto surgiu da necessidade de modernizar o sistema de controle de estoque de uma empresa do setor de pintura, que anteriormente utilizava uma planilha Excel extremamente complexa com 127 abas para gerenciar tintas e seu histórico. Cada tinta tinha sua própria aba com todo o histórico, tornando a visualização e gestão dos dados bastante complicada.
 
 A ideia de remodelação foi criar um novo Excel com apenas 3 abas principais (menu principal, tintas e histórico), simplificando significativamente a visualização e o gerenciamento das informações.
 
@@ -87,8 +87,8 @@ Para atender esta necessidade, criamos um dashboard com os dados mais relevantes
 
 ## Excel Antigo vs Novo
 
-![excel_antigo](https://github.com/VictorEMF/ERP-altapint-prototipo/blob/main/02%20-%20ARQUIVOS/IMAGEN/EXCEL%20ANTIGO.png)
-*Planilha original complexa com 127 abas - cada tinta tinha sua própria aba com histórico completo*
+![excel_antigo](https://github.com/VictorEMF/ERP-altapint-prototipo/blob/main/02%20-%20ARQUIVOS/IMAGEN/EXCEL%20ANTIGO.png)<br/>
+Planilha original complexa com 127 abas - cada tinta tinha sua própria aba com histórico completo
 
 ![excel_novo](https://github.com/VictorEMF/ERP-altapint-prototipo/blob/main/02%20-%20ARQUIVOS/IMAGEN/EXCEL%20NOVO.png)
 Nova planilha simplificada com apenas 3 abas: menu principal, tintas e histórico
@@ -105,23 +105,17 @@ Dashboard criado no Power BI para visualização de dados e métricas de vendas
 ## 📊 Estrutura do Projeto
 
 ```
-ERP-altapint-prototipo/
+Sistema ERP Customizado - Controle de Estoque, Produção e Financeiro/
 ├── 01 - DOCUMENTACAO/           # Manuais e documentação
 ├── 02 - ARQUIVOS/               # Arquivos de base e recursos
 │   ├── IMAGEM/                  # Imagens do projeto
-│   │   ├── EXCEL_ANTIGO.png
-│   │   ├── EXCEL_NOVO.png
+│  
 ├── 03 - ETL/                    # Transformações e jobs do Pentaho
 │   ├── IMAGEM/                  # Imagens das transformações
-│   │   ├── 01_CARGA_DADOS.png
-│   │   ├── 01_RESINA_FABRICANTE_ACABAMENTO.png
-│   │   ├── 02_TINTA.png
-│   │   ├── 03_ESTOQUE.png
-│   │   ├── 04_SERVIÇO.png
-│   │   ├── 05_HISTORICO.png                  
+│  
 ├── 04 - POWER_BI/               # Dashboards e relatórios
-│   ├── IMAGEM/
-│   │   ├── DASHBOARD_VENDAS.png
+│   ├── IMAGEM/                  # Imagens do dashboard
+│  
 ├── 05 - PYTHON/                 # Scripts de extração e tratamento de dados
 ├── README.md
 ```
@@ -180,7 +174,7 @@ Este projeto está sob licença. Veja o arquivo LICENSE para detalhes.
 
 ## 📞 Contato
 
-Victor Emanuel - GitHub - victor.emanuel@example.com
+Victor Emanuel - GitHub - victoremanuel.mff@outlook.com
 
 Link do Projeto: https://github.com/VictorEMF/ERP-altapint-prototipo
 
