@@ -176,6 +176,6 @@ Este projeto está sob licença. Veja o arquivo LICENSE para detalhes.
 
 Victor Emanuel - GitHub - victoremanuel.mff@outlook.com
 
-Link do Projeto: https://github.com/VictorEMF/ERP-altapint-prototipo
+Link do Projeto: https://github.com/VictorEMF/Sistema_ERP_Tintas
 
 <strong>Nota:</strong> Este projeto foi desenvolvido como protótipo para demonstração das capacidades de automação e modernização de sistemas legados, transformando um processo manual e complexo em uma solução integrada e eficiente.
