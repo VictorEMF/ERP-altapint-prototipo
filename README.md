@@ -90,6 +90,7 @@ Para atender esta necessidade, criamos um dashboard com os dados mais relevantes
 ![excel_antigo](https://github.com/VictorEMF/ERP-altapint-prototipo/blob/main/02%20-%20ARQUIVOS/IMAGEN/EXCEL%20ANTIGO.png)<br/>
 Planilha original complexa com 127 abas - cada tinta tinha sua própria aba com histórico completo
 
+</br>
 ![excel_novo](https://github.com/VictorEMF/ERP-altapint-prototipo/blob/main/02%20-%20ARQUIVOS/IMAGEN/EXCEL%20NOVO.png)
 Nova planilha simplificada com apenas 3 abas: menu principal, tintas e histórico
 
