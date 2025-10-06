@@ -88,9 +88,9 @@ Para atender esta necessidade, criamos um dashboard com os dados mais relevantes
 ## Excel Antigo vs Novo
 
 ![excel_antigo](https://github.com/VictorEMF/ERP-altapint-prototipo/blob/main/02%20-%20ARQUIVOS/IMAGEN/EXCEL%20ANTIGO.png)<br/>
-Planilha original complexa com 127 abas - cada tinta tinha sua própria aba com histórico completo
+Planilha original complexa com 127 abas - cada tinta tinha sua própria aba com histórico completo<br/>
 
-</br>
+
 ![excel_novo](https://github.com/VictorEMF/ERP-altapint-prototipo/blob/main/02%20-%20ARQUIVOS/IMAGEN/EXCEL%20NOVO.png)
 Nova planilha simplificada com apenas 3 abas: menu principal, tintas e histórico
 
@@ -100,7 +100,7 @@ Interface do sistema de cadastro desenvolvido em VBA para automatizar o registro
 
 ## Dashboard de Análise
 
-![dashboard](https://github.com/VictorEMF/ERP-altapint-prototipo/blob/main/04%20-%20POWER_BI/IMAGEM/DASHBOARD_VENDAS.png)
+![dashboard](https://github.com/VictorEMF/Sistema_ERP_Tintas/blob/main/04%20-%20POWER_BI/IMAGEM/DASHBOAD_VENDAS.png)
 Dashboard criado no Power BI para visualização de dados e métricas de vendas
 
 ## 📊 Estrutura do Projeto
